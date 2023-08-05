@@ -17,7 +17,7 @@ body,html{
     background-size: cover;
     text-align: center;
     justify-content: center;
-    animation: change 20s infinite ease-in-out;
+    animation: change 60s infinite;
     opacity: 0.3
 }
 
@@ -32,9 +32,25 @@ body,html{
 @keyframes change{
     /* Insert background image transitions here */
     0% {background-image: url(images/cake-1971552_640.jpg)}
+    5% {background-image: url(images/cake-3019645_640.jpg)}
+    10% {background-image: url(images/cherry-pie-2364352_640.jpg)}
+    15% {background-image: url(images/chicken-2451482_640.jpg)}
     20% {background-image: url(images/cookies-4053771_640.jpg)}
-    40% {background-image: url(images/fig-3640553_640.jpg)}
-    60% {background-image: url(images/hamburger-494706_640.jpg)}
-    80% {background-image: url(images/pancake-1984716_640.jpg)}
+    25% {background-image: url(images/curry-7249247_640.jpg)}
+    30% {background-image: url(images/duck-2957809_640.jpg)}
+    35% {background-image: url(images/fig-3640553_640.jpg)}
+    40% {background-image: url(images/goulash-2872112_640.jpg)}
+    45% {background-image: url(images/gourmet-5619887_640.jpg)}
+    50% {background-image: url(images/hamburger-494706_640.jpg)}
+    55% {background-image: url(images/meat-1155132_640.jpg)}
+    60% {background-image: url(images/pancake-1984716_640.jpg)}
+    65% {background-image: url(images/pasta-3547078_640.jpg)}
+    70% {background-image: url(images/ramen-2199962_640.jpg)}
+    75% {background-image: url(images/strawberry-dessert-2191973_640.jpg)}
+    80% {background-image: url(images/ukrainian-dill-potatoes-2652561_640.jpg)}
+    85% {background-image: url(images/pancake-1984716_640.jpg)}
+    90% {background-image: url(images/pancake-1984716_640.jpg)}
+    95% {background-image: url(images/pancake-1984716_640.jpg)}
+    /* Loop back to first image for a seemless loop */
     100% {background-image: url(images/cake-1971552_640.jpg)}
 }
