@@ -30,6 +30,7 @@ body,html{
     opacity:0.5;
 }
 
+/*
 .content{
     position: absolute;
     top: 50%;
@@ -37,12 +38,16 @@ body,html{
     transform: translate(-50%, -50%);
     text-transform: uppercase;
 }
+*/
 
-h1{
+h3{
     font-size: 25px;
     font-family: sans-serif;
-    text-align: center;
+    text-align: left;
     position: relative;
+    padding-left:50px;
+    background-color: lightblue;
+    isolation:isolate;
 }
 
 @keyframes change{
