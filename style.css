@@ -11,14 +11,23 @@ body,html{
     height: 100%;
     overflow: hidden;
     position: relative;
-    background-image: url(images/cake-1971552_640.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     text-align: center;
     justify-content: center;
+    
+}
+
+.background::before{
+    content:'';
+    background-image: url(images/cake-1971552_640.jpg);
+    background-size: cover;
+    position: absolute;
+
+    /* set top,right,bottom,and left position properties to 0 */
+    inset:0;
     animation: change 60s infinite;
-    opacity: 0.3
+    opacity:0.5;
 }
 
 .content{
@@ -27,6 +36,13 @@ body,html{
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
+}
+
+h1{
+    font-size: 25px;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
 }
 
 @keyframes change{
