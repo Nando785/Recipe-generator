@@ -60,9 +60,36 @@ body,html{
     /* create space between sides and border of window */
     padding: 5vh;
 
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: flex-start;
+
     border-width: 2px 2px;
     border-style: solid;
+}
+
+.ingredients_checklist{
+    background-color: #DEDEDE;
+    border-radius: 25px;
+    height: 75vh;
+    width: 50vh;
+    isolation:isolate;
+    border-style: solid;
+    border-width: 1px 1px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.recipe_results{
+    height: 75vh;
+    width: 50vh;
+    isolation:isolate;
+    border-style: solid;
+    border-width: 1px 1px;
+}
+
+ul{
+    /* remove default bullet points */
+    padding:0;
 }
 
 @keyframes change{
@@ -92,27 +119,7 @@ body,html{
     100% {background-image: url(images/cake-1971552_640.jpg)}
 }
 
-.ingredients_section{
-    isolation:isolate;
-    border-style: solid;
-    border-width: 1px 1px;
-}
-
-.recipe_results{
-    isolation:isolate;
-    border-style: solid;
-    border-width: 1px 1px;
-}
-
-.TEST{
-    width: 650px;
-    isolation:isolate;
-    border-style: solid;
-    border-width: 1px 1px;
-}
-
 .TEST2{
-    width: 650px;
     isolation:isolate;
     border-style: solid;
     border-width: 1px 1px;
