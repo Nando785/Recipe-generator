@@ -20,14 +20,13 @@ body,html{
 
 .background::before{
     content:'';
+    opacity:0.5;
     background-image: url(images/cake-1971552_640.jpg);
     background-size: cover;
     position: absolute;
-
     /* set top,right,bottom,and left position properties to 0 */
     inset:0;
     animation: change 60s infinite;
-    opacity:0.5;
 }
 
 /*
@@ -40,20 +39,36 @@ body,html{
 }
 */
 
-h3{
+.title{
+    border-style: solid;
+    border-width: 1px 1px;
+
     font-size: 25px;
     font-family: sans-serif;
     text-align: left;
     position: relative;
     padding-left:50px;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     isolation:isolate;
+}
+
+.content{
+    /* place both content sections next to eachother instead of top to bottom */
+    display: flex;
+    /* have content div take 85% of screen size */
+    height: 85vh;
+    /* create space between sides and border of window */
+    padding: 5vh;
+
+    justify-content: space-between;
+    border-width: 2px 2px;
+    border-style: solid;
 }
 
 @keyframes change{
     /* Insert background image transitions here */
     0% {background-image: url(images/cake-1971552_640.jpg)}
-    5% {background-image: url(images/cake-3019645_640.jpg)}
+    /* 5% {background-image: url(images/cake-3019645_640.jpg)}
     10% {background-image: url(images/cherry-pie-2364352_640.jpg)}
     15% {background-image: url(images/chicken-2451482_640.jpg)}
     20% {background-image: url(images/cookies-4053771_640.jpg)}
@@ -71,7 +86,34 @@ h3{
     80% {background-image: url(images/ukrainian-dill-potatoes-2652561_640.jpg)}
     85% {background-image: url(images/strawberries-1314524_640.jpg)}
     90% {background-image: url(images/sweet-and-sour-pork-1264563_640.jpg)}
-    95% {background-image: url(images/cherries-1477298_640.jpg)}
+    95% {background-image: url(images/cherries-1477298_640.jpg)} */
+
     /* Loop back to first image for a seemless loop */
     100% {background-image: url(images/cake-1971552_640.jpg)}
+}
+
+.ingredients_section{
+    isolation:isolate;
+    border-style: solid;
+    border-width: 1px 1px;
+}
+
+.recipe_results{
+    isolation:isolate;
+    border-style: solid;
+    border-width: 1px 1px;
+}
+
+.TEST{
+    width: 650px;
+    isolation:isolate;
+    border-style: solid;
+    border-width: 1px 1px;
+}
+
+.TEST2{
+    width: 650px;
+    isolation:isolate;
+    border-style: solid;
+    border-width: 1px 1px;
 }
