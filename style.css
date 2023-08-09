@@ -67,9 +67,26 @@ body,html{
     border-style: solid;
 }
 
+/* scrollbar styling */
+::-webkit-scrollbar{
+    width:0.75vw;
+    /* background: transparent; */
+}
+::-webkit-scrollbar-track{
+    /* background-color: transparent; */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #4D6B53;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#718975;
+}
+
 .ingredients_checklist{
     background-color: #DEDEDE;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     height: 75vh;
     width: 50vh;
     isolation:isolate;
@@ -85,12 +102,31 @@ body,html{
     isolation:isolate;
     border-style: solid;
     border-width: 1px 1px;
+    transition: 0.5s;
+    user-select: none;
 }
 
 ul{
     /* remove default bullet points */
     padding:0;
 }
+/* =============== button styling ================*/
+.ingredients_list ul li{
+    display: inline-block;
+    background: #b2b2b2;
+    color: black;
+    border-radius: 25px;
+    font-size: 25px;
+}
+.ingredients_list ul li:before{
+    content:'';
+    position:absolute;
+    top: 0%;
+}
+.ingredients_list ul input[type="checkbox"]:checked ~li{
+    background:#fff;
+}
+/* =============== ============= ================*/
 
 @keyframes change{
     /* Insert background image transitions here */
