@@ -85,6 +85,9 @@ body,html{
 }
 
 .ingredients_checklist{
+    /* display:flex;
+    flex-direction: column; */
+
     background-color: #DEDEDE;
     /* border-radius: 25px; */
     height: 75vh;
