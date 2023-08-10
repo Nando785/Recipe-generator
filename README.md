@@ -1,5 +1,5 @@
 # Recipe-Generator
-<h1> Fernando Rodriguez Martinez </h1>
+<h2> Fernando Rodriguez Martinez </h2>
 
 Welcome to RecipeFinder, your go-to web app for whipping up fantastic dishes using ingredients you already have! Crafted using HTML, CSS, and Python, this project harnesses the Spoonacular API to deliver tailored recipes straight to your kitchen.
 
