@@ -20,28 +20,48 @@ headers = {
     "X-RapidAPI-Host" : "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
 }
 
-response = requests.get(url, headers=headers, params=querystring)
+recipesList = requests.get(url, headers=headers, params=querystring)
+data = recipesList.json();
 
-print(response.status_code)
-#print(response.json())
-for recipe in response:
-    print("Recpie name:" + recipe['title'])
+#print(recipeList.json())
+
+#get id and recall api to get more info
+id = data[0]['id']
+print(data[0]['title'])
+
+#======================================== Parse information ========================================
+
+class Recipe:
+    id: int #id
+    name: str #title
+    photo: str #image
+    missedIngredientCount: int #missedIngredientCount
+
+    recipeLink: str #sourceURL
+    vegetarian: bool #vegeterian
+    glutenFree: bool #glutenFree
+    servings: int #servings
+    pricePerServing: int #pricePerServing
+    cookingTime: int # readyInMinutes
+    instructions: str #instructions
 
 
 #===================================== RECIPE INFO FINDER =====================================
 
 #ids for all resulting recipes will be parsed from the first api call and used in
 #the new api call for recipe info
-id = 673463
 
-infoURL = "https://api.spoonacular.com/recipes/{id}/information"
+infoURL = "https://api.spoonacular.com/recipes/informationBulk"
+
+queryStringINFO = {"ids":str(id)}
 
 #===== headers already declared above =====
-# headers = {
-#     "x-api-key" : "170112d56069460d9a732b82cc328a8e",
-#     "X-RapidAPI-Host" : "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-# }
+infoHeaders = {
+    "x-api-key" : "170112d56069460d9a732b82cc328a8e",
+    "X-RapidAPI-Host" : "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+}
 
-#response = requests.get(infoURL, headers=headers)
+info = requests.get(infoURL, headers=infoHeaders, params=queryStringINFO)
+# infoData = info.json();
 
-print(response.json())
+print(info.json())
