@@ -73,7 +73,7 @@ class Recipe:
 finalRecipes = []
 
 #append recipe to each index in finalRecipes list, adding info from resulting API returns
-for index in range(5):
-    finalRecipes.append(Recipe(data[index]['id'], data[index]['title'], data[index]['image'], data[index]['missedIngredientCount'], infoData[index['sourceURL']]))
+for index in data:
+    finalRecipes.append()
 
 print(finalRecipes[0])
