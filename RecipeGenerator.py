@@ -1,9 +1,17 @@
-import requests
+import requests, sys
+
+ingredients = sys.argv[1:]
+response = requests.post('http://127.0.0.1:8000/send-ingredients', json={'ingredients': ingredients})
+
+if response.status_code == 200:
+    print('Ingredients sent successfully')
+else:
+    print('Failed to send ingredients')
 
 #======================================== RECIPE FINDER ========================================
 
 #parameters customized through "ingredients_list" in frontend
-ingredients = "apples,flour,sugar"
+# ingredients = "apples,flour,sugar"
 numberOfRecipes = 5
 ignorePantry = True
 ranking = 2
