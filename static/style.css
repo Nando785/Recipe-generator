@@ -122,6 +122,22 @@ body,html{
     background-color: #4D6B53;
     color: white;
 }
+
+.submit_button{
+    isolation:isolate;
+    width:200px;
+    padding: 10px;
+    margin: 5px;
+    background-color: darkgray;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.submit_button.checked{
+    background-color: #4D6B53;
+    color: white;
+}
 /* =============== ============= ================*/
 
 @keyframes change{
