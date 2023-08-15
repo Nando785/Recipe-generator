@@ -81,8 +81,9 @@ body,html{
 }
 
 .ingredients_checklist{
-    /* display:flex;
-    flex-direction: column; */
+    display:flex;
+    align-items:center;
+    flex-direction: column;
 
     background-color: #DEDEDE;
     /* border-radius: 25px; */
@@ -118,7 +119,7 @@ body,html{
 }
 
 .ingredient.checked{
-    background-color: #008000;
+    background-color: #4D6B53;
     color: white;
 }
 /* =============== ============= ================*/
