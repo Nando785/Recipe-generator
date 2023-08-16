@@ -11,17 +11,20 @@ def generate_recipes():
     selected_ingredients = data.get('ingredients', [])
 
     #run the RecipeGenerator.py script with selected ingredients
-    script_path = 'RecipeGenerator.py' #potential error
+    script_path = 'RecipeGenerator.py' 
     command = ['python', script_path] + selected_ingredients
-    subprocess.run(command)
+    #subprocess.run(command)
 
-    return jsonify({'message': 'Recipe generation started successfully'})
-# @app.route('/send-ingredients', methods=['POST'])
-# def recieve_ingredients():
-#     data = request.json
-#     selected_ingredients = data.get('ingredients', [])
+    try:
+        result = subprocess.check_output(command, stderr=subprocess.STDOUT, text=True)
+        #debug: pring script output
+        print(result)
 
-#     return jsonify({'message': 'Ingredients recieved successfully'})
+        #return jsonify({'message': 'Recipe generatoin started successfully'})
+        return jsonify({'recipes': result})
+    except subprocess.CalledProcessError as e:
+        return jsonify({'error': str(e)})
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

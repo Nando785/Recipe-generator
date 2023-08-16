@@ -11,8 +11,7 @@ else:
 #======================================== RECIPE FINDER ========================================
 
 #parameters customized through "ingredients_list" in frontend
-# ingredients = "apples,flour,sugar"
-numberOfRecipes = 5
+numberOfRecipes = 2
 ignorePantry = True
 ranking = 2
 
@@ -32,56 +31,60 @@ headers = {
 recipesList = requests.get(url, headers=headers, params=querystring)
 data = recipesList.json();
 
-#======================================== Parse information ========================================
-#ids for all resulting recipes will be parsed from the first api call and used in
-#the new api call for recipe info
-
-idList = []
-for index in data:
-    idList.append(index["id"])
-
-#===================================== RECIPE INFO FINDER =====================================
-
-infoURL = "https://api.spoonacular.com/recipes/informationBulk"
-
-queryStringINFO = {}
-
-#Convert the idList integers to strings and join them with commas
-ids_string = ",".join(map(str, idList))
-
-#add ids into queryStringINFO dictionary
-queryStringINFO["ids"] = ids_string
-
-#headers already declared above
-info = requests.get(infoURL, headers=headers, params=queryStringINFO)
-
-#convert result into json/dictionary
-infoData = info.json();
+# print(data)
+#++++++++++++++++++++++++++++++++++++++++++++ VV Temporary commenting VV ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-#=========================== Gather all resulting info and combine into list ===========================
-#all neccessary info is in "data" and "infoData"
+# #======================================== Parse information ========================================
+# #ids for all resulting recipes will be parsed from the first api call and used in
+# #the new api call for recipe info
 
-class Recipe:
-    #== info from first API call ==
-    id: int #id
-    name: str #title
-    photo: str #image
-    missedIngredientCount: int #missedIngredientCount
+# idList = []
+# for index in data:
+#     idList.append(index["id"])
 
-    #== info from second API call ==
-    recipeLink: str #sourceURL
-    vegetarian: bool #vegeterian
-    glutenFree: bool #glutenFree
-    servings: int #servings
-    pricePerServing: int #pricePerServing
-    cookingTime: int # readyInMinutes
-    instructions: str #instructions
+# #===================================== RECIPE INFO FINDER =====================================
 
-finalRecipes = []
+# infoURL = "https://api.spoonacular.com/recipes/informationBulk"
 
-#append recipe to each index in finalRecipes list, adding info from resulting API returns
-for index in data:
-    finalRecipes.append()
+# queryStringINFO = {}
 
-print(finalRecipes[0])
+# #Convert the idList integers to strings and join them with commas
+# ids_string = ",".join(map(str, idList))
+
+# #add ids into queryStringINFO dictionary
+# queryStringINFO["ids"] = ids_string
+
+# #headers already declared above
+# info = requests.get(infoURL, headers=headers, params=queryStringINFO)
+
+# #convert result into json/dictionary
+# infoData = info.json();
+
+
+# #=========================== Gather all resulting info and combine into list ===========================
+# #all neccessary info is in "data" and "infoData"
+
+# class Recipe:
+#     #== info from first API call ==
+#     id: int #id
+#     name: str #title
+#     photo: str #image
+#     missedIngredientCount: int #missedIngredientCount
+
+#     #== info from second API call ==
+#     recipeLink: str #sourceURL
+#     vegetarian: bool #vegeterian
+#     glutenFree: bool #glutenFree
+#     servings: int #servings
+#     pricePerServing: int #pricePerServing
+#     cookingTime: int # readyInMinutes
+#     instructions: str #instructions
+
+# finalRecipes = []
+
+# #append recipe to each index in finalRecipes list, adding info from resulting API returns
+# for index in data:
+#     finalRecipes.append()
+
+# print(finalRecipes[0])

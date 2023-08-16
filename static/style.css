@@ -172,3 +172,11 @@ body,html{
     border-style: solid;
     border-width: 1px 1px;
 }
+
+.recipe_item{
+    background-color: #F5F5F5;
+    border: 1px solid #CCCCCC;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
