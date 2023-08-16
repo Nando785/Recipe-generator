@@ -49,7 +49,7 @@ submitButton.addEventListener('click', function () {
         data.recipes.forEach(recipe => {
             const recipeDiv = document.createElement('div');
             recipeDiv.classList.add('recipe_item');
-            recipeDiv.textContent = "Title: ${recipe.title}, Likes: ${recipe.likes}";
+            recipeDiv.textContent = 'Title: ${recipe.title}, Missing Ingredients: ${recipe.missedIngredientCount}';
             recipeResults.appendChild(recipeDiv);
         });
     })
