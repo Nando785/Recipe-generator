@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from views import views
-import subprocess, json
+import subprocess
 
 app = Flask(__name__)
 app.register_blueprint(views, url_prefix="/")
@@ -18,10 +18,10 @@ def generate_recipes():
     try:
         result = subprocess.check_output(command, stderr=subprocess.STDOUT, text=True)
         #debug: pring script output
-        recipes_list = json.loads(result)
+        print(result)
 
         #return jsonify({'message': 'Recipe generatoin started successfully'})
-        return jsonify({'recipes': recipes_list})
+        return jsonify({'recipes': result})
     except subprocess.CalledProcessError as e:
         return jsonify({'error': str(e)})
 

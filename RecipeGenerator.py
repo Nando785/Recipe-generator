@@ -29,7 +29,7 @@ headers = {
 
 #callAPI and convert result into json/dictionary
 recipesList = requests.get(url, headers=headers, params=querystring)
-#data = recipesList.json();
+data = recipesList.json();
 
 # print(data)
 #++++++++++++++++++++++++++++++++++++++++++++ VV Temporary commenting VV ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
