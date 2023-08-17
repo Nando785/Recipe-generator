@@ -1,6 +1,7 @@
 import requests, sys
 
 ingredients = sys.argv[1:]
+ing = ",".join(map(str, ingredients))
 response = requests.post('http://127.0.0.1:8000/send-ingredients', json={'ingredients': ingredients})
 
 if response.status_code == 200:
@@ -17,7 +18,7 @@ ranking = 2
 
 url = "https://api.spoonacular.com/recipes/findByIngredients"
 
-querystring = {"ingredients":ingredients, 
+querystring = {"ingredients":ing, 
                "number":numberOfRecipes,
                "ignorePantry":ignorePantry,
                "ranking":ranking}

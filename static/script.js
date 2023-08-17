@@ -37,7 +37,7 @@ submitButton.addEventListener('click', function () {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        console.log(data.length)
         console.log(data.message); // Log the response message
 
         const recipeResults = document.querySelector('.recipe_results');
@@ -46,16 +46,28 @@ submitButton.addEventListener('click', function () {
         recipeResults.innerHTML = '';
 
         //loop through the data and create a new div for each recipe
-        const recipeDiv = document.createElement('div');
+        data.forEach(recipe => {
+            const recipeDiv = document.createElement('div');
             recipeDiv.classList.add('recipe_item');
             recipeDiv.textContent = "Test";
             recipeResults.appendChild(recipeDiv);
-        // data.recipes.forEach(recipe => {
-        //     const recipeDiv = document.createElement('div');
-        //     recipeDiv.classList.add('recipe_item');
-        //     recipeDiv.textContent = "Title: ${recipe.title}, Likes: ${recipe.likes}";
-        //     recipeResults.appendChild(recipeDiv);
-        // });
+        });
+
+        // const recipeDiv = document.createElement('div');
+        // recipeDiv.classList.add('recipe_item');
+        // recipeDiv.textContent = data[0];
+        // recipeResults.appendChild(recipeDiv);
+
+        // const recipeDiv2 = document.createElement('div');
+        // recipeDiv.classList.add('recipe_item');
+        // recipeDiv.textContent = data[1];
+        // recipeResults.appendChild(recipeDiv);
+
+        // const recipeDiv3 = document.createElement('div');
+        // recipeDiv.classList.add('recipe_item');
+        // recipeDiv.textContent = data[2];
+        // recipeResults.appendChild(recipeDiv);
+
     })
     .catch(error => {
         console.error('Error:', error);
