@@ -46,12 +46,16 @@ submitButton.addEventListener('click', function () {
         recipeResults.innerHTML = '';
 
         //loop through the data and create a new div for each recipe
-        data.recipes.forEach(recipe => {
-            const recipeDiv = document.createElement('div');
+        const recipeDiv = document.createElement('div');
             recipeDiv.classList.add('recipe_item');
-            recipeDiv.textContent = "Title: ${recipe.title}, Likes: ${recipe.likes}";
+            recipeDiv.textContent = "Test";
             recipeResults.appendChild(recipeDiv);
-        });
+        // data.recipes.forEach(recipe => {
+        //     const recipeDiv = document.createElement('div');
+        //     recipeDiv.classList.add('recipe_item');
+        //     recipeDiv.textContent = "Title: ${recipe.title}, Likes: ${recipe.likes}";
+        //     recipeResults.appendChild(recipeDiv);
+        // });
     })
     .catch(error => {
         console.error('Error:', error);
